@@ -24,6 +24,6 @@ generation_prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
-llm = ChatOllama(model="llama3.2",temperature=0)
+llm = ChatOllama(model="llama3.2", temperature=0)
 generate_chain = generation_prompt | llm
 reflect_chain = reflection_prompt | llm
