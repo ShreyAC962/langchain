@@ -13,6 +13,7 @@ langchain-openai = "^1.0.3"
 langchain-tavily = "^0.2.13"
 langgraph = "^1.0.3"
 python-dotenv = "^1.2.1"
+langchain-ollama = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.11.0"
