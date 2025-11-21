@@ -1,8 +1,8 @@
 from langchain_core.prompts import ChatPromptTemplate
-from pydantic import BaseModel, Field
 from langchain_ollama import ChatOllama
+from pydantic import BaseModel, Field
 
-llm = ChatOllama(model = "llama3",temperature=0)
+llm = ChatOllama(model="llama3", temperature=0)
 
 
 class GradeDocuments(BaseModel):

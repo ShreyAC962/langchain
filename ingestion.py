@@ -1,11 +1,9 @@
 from dotenv import load_dotenv
-
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_ollama import ChatOllama, OllamaEmbeddings
 from langchain_openai import OpenAIEmbeddings
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 load_dotenv()
 
@@ -18,9 +16,7 @@ urls = [
 docs = [WebBaseLoader(url).load() for url in urls]
 docs_list = [item for sublist in docs for item in sublist]
 
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=250, chunk_overlap=0
-)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=250, chunk_overlap=0)
 doc_splits = text_splitter.split_documents(docs_list)
 
 # vectorstore = Chroma.from_documents(
